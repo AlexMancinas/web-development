@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+}
+body{
+    border: 5px solid;
+    height:  100%;
+}
+header{
+    background-color: green;
+    height: 200px;
+    width: 100%;
+    
+}
+
+nav{
+    background-color: lightblue;
+    height: 100px;
+    width: 50%;
+}
+
+article{
+    background-color: orange;
+    width: 100%;
+    height: 500px;
+}
+
+figure{
+    background-color: aquamarine;
+    height: 100px;
+}
+
+footer{
+    background-color: blue;
+    height: 300px;
+}
