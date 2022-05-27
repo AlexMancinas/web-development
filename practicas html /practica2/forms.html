@@ -9,15 +9,15 @@
 <body>
     <h1>Hi! welcome to HTML FORMS</h1>
 
-    <form>
-        <label for="username">username:</label>
-        <input type="text" name="username" id=""> 
+    <form >
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="" placeholder="username"> 
         <br><br>
         <label for="email">Email:</label>
-        <input type="email" name="email" id="">
+        <input type="email" name="email" id="" placeholder="email">
         <br><br>
         <label for="password">Password:</label>
-        <input type="password">
+        <input type="password" placeholder="password">
         <br><br>
         <label for="gender">Male</label>
         <input type="radio" name="gender" value="male"id="">
@@ -27,6 +27,34 @@
         <br>
         <label for="no-binary">No binary</label>
         <input type="radio" name="no-binary" value="no-binary" id="">
+        <br><br><br>
+        <p>Select your age</p>
+        <br>
+        <input type="radio" name="age" value="0-25" id="option-1">
+        <label for="age">De 0 a 25</label>
+        
+        <input type="radio" name="age" value="26-50" id="option-2">
+        <label for="age">De 26 a 50</label>
+        
+        <input type="radio" name="age" value="51+" id="option-2">
+        <label for="age">51 o más</label>
+        <br><br><br>
+
+        <label for="question">Choose your case</label>
+        <select name="question" id="question">
+            <option value="student">student</option>
+            <option value="worker">worker</option>
+            <option value="nini">No work or study</option>
+        </select>
+        <br><br><br>
+
+        <label for="bio">Describes something about you</label><br>
+        <textarea name="bio" id="" cols="30" rows="10" placeholder="About you..."></textarea>
+        <br><br>
+
+        <input type="submit" value="Enviar">
     </form>
+
+    
 </body>
 </html>
