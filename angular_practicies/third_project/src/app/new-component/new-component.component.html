@@ -12,6 +12,6 @@
 (click)="onCreateServer()">Allow</button>
 
 <!-- <p [innerText]="allowNewServer"></p> -->
-<p *ngIf="serverCreated">Server was created, server name is {{ serverName}}</p>
+<p *ngIf="serverCreated">Sersver was created, server name is {{ serverName}}</p>
 
-
+<app-server *ngFor="let s of servers"></app-server>
