@@ -119,6 +119,33 @@
     
 }
 
-@media screen {
-    
+@media (max-width: 924px) {
+    .aside h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 830px) {
+    .banner h1{
+       font-size: 25px; 
+    }
+    .aside h3 {
+        font-size: 15px;
+    }
+    .card .description{
+        display: none;
+    }
+    .card{
+        height: auto;
+    }
+
+    .card .category{
+        font-size: 15px ;
+        margin-top: -23px;
+    }
+
+    .footer img{
+        margin-bottom: 15px;
+        min-width: 100%;
+    }
 }
