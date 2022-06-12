@@ -2,6 +2,50 @@ body{
     text-align: center;
     font-family: Sans-serif;
 }
+/* ---------------------------------------------Ejercicio completo----------------------------------------------- */
+
+.website{
+    width: 75%;
+    height: 100vh;
+    margin: 0px auto;
+    border: 1px solid #ccc;
+}
+
+.header{
+    background-color: blue;
+    color: white
+}
+
+.menu{
+    background-color: lightblue;
+    color: black;
+}
+
+.contain{
+    background-color: #eee;
+}
+
+.contain article{
+    background-color: #ccc;
+    border: 1px solid #555;
+}
+
+.aside{
+    background-color: orange;
+    color: white;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+}
+
+
+
+/* ---------------------------------------------------Ejemplos--------------------------------------------------- */
+
+
+
 
 .layout{
     width: 80%;
