@@ -2,6 +2,83 @@ body{
     text-align: center;
     font-family: Sans-serif;
 }
+/* ---------------------------------------------Ejercicio completo areas----------------------------------------------- */
+.website-areas *{
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.website-areas{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 150px 70px 1fr 70px;
+    grid-template-areas: 
+    "header header header header header"
+    "menu menu menu menu menu"
+    "contain contain contain contain aside"
+    "footer footer footer footer footer";
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 20% 10% 60% 10%;
+
+    
+
+    width: 75%;
+    height: 100vh;
+    margin: 0px auto;
+    border: 1px solid #ccc;
+}
+
+.website-areas .header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: blue;
+    color: white
+}
+
+.website-areas .menu{
+    grid-area: menu;
+    background-color: lightblue;
+
+    color: black;
+}
+
+.website-areas .menu ul{
+    display: grid;
+    grid-template-columns:  repeat(5, 1fr);
+    list-style: none;
+    line-height: 70px;
+}
+.website-areas .contain{
+    grid-area: contain;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding: 20px;
+
+    background-color: #eee;
+}
+
+.website-areas .contain article{
+    background-color: #ccc;
+    border: 1px solid #555;
+}
+
+.website-areas .aside{
+    grid-area: aside;
+    background-color: orange;
+    color: white;
+}
+
+.website-areas .footer{
+    grid-area: footer;
+    background-color: black;
+    color: white;
+}
 /* ---------------------------------------------Ejercicio completo----------------------------------------------- */
 .website *{
     margin: 0px;
@@ -21,7 +98,7 @@ body{
     border: 1px solid #ccc;
 }
 
-.header{
+.website .header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,19 +107,20 @@ body{
     color: white
 }
 
-.menu{
+.website .menu{
     grid-column: 1 / 6;
     background-color: lightblue;
 
     color: black;
 }
 
-.menu ul{
+.website .menu ul{
     display: grid;
     grid-template-columns:  repeat(5, 1fr);
     list-style: none;
+    line-height: 70px;
 }
-.contain{
+.website .contain{
     grid-column: 1/5;
 
     display: grid;
@@ -53,18 +131,18 @@ body{
     background-color: #eee;
 }
 
-.contain article{
+.website .contain article{
     background-color: #ccc;
     border: 1px solid #555;
 }
 
-.aside{
+.website .aside{
     grid-column: 5 / 6;
     background-color: orange;
     color: white;
 }
 
-.footer{
+.website .footer{
     grid-column: 1/6;
     background-color: black;
     color: white;
