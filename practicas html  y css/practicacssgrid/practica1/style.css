@@ -3,8 +3,18 @@ body{
     font-family: Sans-serif;
 }
 /* ---------------------------------------------Ejercicio completo----------------------------------------------- */
+.website *{
+    margin: 0px;
+    padding: 0px;
+}
 
 .website{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 20% 10% 60% 10%;
+
+    
+
     width: 75%;
     height: 100vh;
     margin: 0px auto;
@@ -12,16 +22,34 @@ body{
 }
 
 .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 /6;
     background-color: blue;
     color: white
 }
 
 .menu{
+    grid-column: 1 / 6;
     background-color: lightblue;
+
     color: black;
 }
 
+.menu ul{
+    display: grid;
+    grid-template-columns:  repeat(5, 1fr);
+    list-style: none;
+}
 .contain{
+    grid-column: 1/5;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding: 20px;
+
     background-color: #eee;
 }
 
@@ -31,11 +59,13 @@ body{
 }
 
 .aside{
+    grid-column: 5 / 6;
     background-color: orange;
     color: white;
 }
 
 .footer{
+    grid-column: 1/6;
     background-color: black;
     color: white;
 }
