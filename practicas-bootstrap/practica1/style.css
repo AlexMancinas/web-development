@@ -1,0 +1,50 @@
+.menu{
+    height: 50px;
+}
+header{
+    text-align: center;
+}
+
+.container nav ul {
+    list-style: none;
+    line-height: 50px;
+}
+
+.container nav ul li{
+    text-decoration: none;
+}
+
+.item{
+    height: 150px;
+}
+
+.four{
+    justify-content: center;
+}
+
+.aside{
+    height: 550px;
+    align-items: center;
+}
+
+.aside > div{
+    height: calc(250px / 3);
+}
+
+footer{
+    height: 50px;
+    line-height: 50px; 
+    text-align: center;
+}
+@media (max-width: 992px) {
+    .menu{
+        height: auto;
+        width: auto;
+        
+    }
+}
+@media (max-width: 576px) {
+    .menu{
+        height: auto;
+    }
+}
