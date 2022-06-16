@@ -1,0 +1,12 @@
+.article-detail{
+    display: grid;
+    grid-template-columns: 1fr !important;
+    .image-wrap{
+        width: 100% !important;
+        height: 300px !important;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
