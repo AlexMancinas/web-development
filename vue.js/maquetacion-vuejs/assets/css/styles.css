@@ -279,8 +279,6 @@ body .container .header .logo img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: rotate-logo 30s linear infinite;
-          animation: rotate-logo 30s linear infinite;
 }
 
 body .container .header .logo .brand {
