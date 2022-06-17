@@ -4,7 +4,7 @@
 @import 'article';
 @import 'form';
 //Variables 
-$color-react : #62dafb;
+$color-vue : #4dba87;
 
 body {
     text-align: center;
@@ -18,7 +18,7 @@ body {
     -moz-osx-font-smoothing: antialiased;
 
     .container {
-       
+
         .header {
             display: grid;
             grid-template-columns: 35% 65%;
@@ -26,7 +26,7 @@ body {
             width: 100%;
             align-items: center;
             border-bottom: 1px solid #ccc;
-            border-top: 5px solid $color-react;
+            border-top: 5px solid $color-vue;
 
             .logo {
                 grid-template-columns: repeat(2, 1fr);
@@ -72,7 +72,7 @@ body {
                         transition: all 300ms;
 
                         &:hover {
-                            color: $color-react;
+                            color: $color-vue;
                         }
 
                     }
@@ -86,55 +86,60 @@ body {
         #slider.slider-big {
             display: grid;
             grid-template-columns: 1fr;
-            background: rgb(140, 208, 227);
-            background: radial-gradient(circle, rgba(140, 208, 227, 1) 0%, rgba(98, 218, 251, 1) 100%);
+
+            background: rgb(30, 136, 87);
+            background: radial-gradient(circle, rgba(30, 136, 87, 1) 1%, rgba(77, 186, 135, 1) 100%);
             width: 100%;
             height: 350px;
             align-items: center;
             color: white;
             text-shadow: 0px 0px 5px #444;
-            .btn-white{
+
+            .btn-white {
                 display: grid;
                 text-decoration: none;
                 align-items: center;
                 margin: auto auto;
                 margin-top: -1%;
-                color: rgb(77, 64, 64) ;
+                color: rgb(77, 64, 64);
                 border: 1px solid #444;
-                height:4em;
+                height: 4em;
                 width: 9em;
                 background: white;
                 text-shadow: none;
-                box-shadow:  0px 0px 5px #444;
+                box-shadow: 0px 0px 5px #444;
                 border-radius: 5%;
                 text-transform: uppercase;
                 transition: all 300ms;
-                &:hover{
+
+                &:hover {
                     background: #444;
                     color: white;
                 }
             }
-           
+
         }
-        
-        main{
+
+        main {
             display: grid;
             width: 100%;
             grid-template-columns: 4fr 1fr;
             min-height: 650px;
-            .content{
+
+            .content {
                 display: grid;
                 margin-right: 170px;
 
-                .sub-header{
+                .sub-header {
                     height: 80px;
                     font-size: 38px;
                     text-align: center;
                     margin-left: 100px;
                     border-bottom: 1px solid #eee;
-                    
+
                 }
-                .article-item{
+
+                .article-item {
                     width: 90%;
                     display: grid;
                     border-bottom: 1px solid #eee;
@@ -143,50 +148,53 @@ body {
                     text-align: left;
                     margin-left: 10%;
                     grid-template-columns: 14% 80%;
-                    
-                    .image-wrap{
-                        
-                       height: 130px;
-                       width: 130px;
-                       overflow: hidden;
-                       margin-right: -8%;
-                       border: 1px solid #ccc;
+
+                    .image-wrap {
+
+                        height: 130px;
+                        width: 130px;
+                        overflow: hidden;
+                        margin-right: -8%;
+                        border: 1px solid #ccc;
                     }
-                    
-                    span{
+
+                    span {
                         display: block;
                         width: 100%;
                         color: rgb(122, 122, 122);
                     }
-                    a{
+
+                    a {
                         display: block;
                         color: #444;
                         text-decoration: none;
                         margin-top: 10px;
 
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                         }
                     }
-                   
+
                 }
             }
 
-            aside{
+            aside {
                 margin-right: 30px;
-                .sidebar-item{
+
+                .sidebar-item {
                     background-color: #eaecee;
                     text-transform: uppercase;
                     margin-top: 30px;
                     margin-right: 20px;
                     padding: 20px 20px;
-                    h3{
+
+                    h3 {
                         height: 35px;
                         border-bottom: 1px solid rgb(138, 130, 130);
                         margin-bottom: 20px;
                     }
-                    
-                    a{
+
+                    a {
                         display: block;
                         text-decoration: none;
                         color: white;
@@ -199,32 +207,37 @@ body {
                         font-weight: bold;
                         border-radius: 5px;
                         transition: all;
-                        &:hover{
+
+                        &:hover {
                             background-color: black;
                         }
                     }
 
-                    p{
+                    p {
                         padding-top: 10px;
                         height: 30px;
                         font-size: 14px;
                     }
-                    input[type="text"]{
+
+                    input[type="text"] {
                         width: 100%;
                         height: 30px;
                         border: 1px solid rgb(173, 166, 166);
                         margin-bottom: 15px;
                         border-radius: 10px;
                         transition: all 300ms;
-                        &:hover{
+
+                        &:hover {
                             box-shadow: 0px 0px 3px #444;
                         }
-                        &:focus{
+
+                        &:focus {
                             box-shadow: 0px 0px 5px #444 inset;
                         }
-                       
+
                     }
-                     button{
+
+                    button {
                         background: #000;
                         color: white;
                         cursor: pointer;
@@ -234,16 +247,17 @@ body {
                         text-transform: uppercase;
                         font-weight: bold;
                         border: none;
-                        &:focus{
+
+                        &:focus {
                             box-shadow: 0px 0px 5px #444;
                         }
-                     }
-                    
+                    }
+
                 }
             }
         }
 
-        footer{
+        footer {
             margin-top: 30px;
             display: grid;
             width: 100%;
@@ -256,5 +270,3 @@ body {
 
 
 }
-
-
