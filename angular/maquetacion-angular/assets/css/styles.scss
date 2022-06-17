@@ -4,7 +4,7 @@
 @import 'article';
 @import 'form';
 //Variables 
-$color-react : #62dafb;
+$color-angular : #f13e3e;
 
 body {
     text-align: center;
@@ -26,7 +26,7 @@ body {
             width: 100%;
             align-items: center;
             border-bottom: 1px solid #ccc;
-            border-top: 5px solid $color-react;
+            border-top: 5px solid $color-angular;
 
             .logo {
                 grid-template-columns: repeat(2, 1fr);
@@ -39,7 +39,7 @@ body {
                     margin-left: 75%;
                     height: 60px;
                     display: flex;
-                    animation: rotate-logo 30s linear infinite;
+                    animation: latir 2s linear infinite;
                 }
 
                 .brand {
@@ -72,7 +72,7 @@ body {
                         transition: all 300ms;
 
                         &:hover {
-                            color: $color-react;
+                            color: $color-angular;
                         }
 
                     }
@@ -86,8 +86,9 @@ body {
         #slider.slider-big {
             display: grid;
             grid-template-columns: 1fr;
-            background: rgb(140, 208, 227);
-            background: radial-gradient(circle, rgba(140, 208, 227, 1) 0%, rgba(98, 218, 251, 1) 100%);
+      
+            background: rgb(241,62,62);
+            background: radial-gradient(circle, rgba(241,62,62,1) 1%, rgba(252,79,70,1) 100%);
             width: 100%;
             height: 350px;
             align-items: center;

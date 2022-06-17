@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maquetacion base</title>
+    <title>Angular project</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
 
 <body>
@@ -15,9 +16,9 @@
 
             <!-- LOGO -->
             <div class="logo">
-                <img src="assets/img/react.svg" alt="Logo de react">
+                <img src="assets/img/angular-icon.svg" alt="Logo de angular">
                 <span class="brand">
-                    <strong>Curso</strong> React
+                    <strong>Curso</strong> Angular
                 </span>
             </div>
 
@@ -32,32 +33,37 @@
 
         </header>
         <!-- Slider -->
-        <div id="slider" class="slider-big">
-            <h1>Bienvenidos al curso de React</h1>
-            <a href="blog.html" class="btn-white">Ir al blog</a>
-        </div>
+
         <main class="main">
 
-            <!-- Templates -->
-            <section id="articles" class="content">
-                <h2 class="sub-header">Últimos artículos</h2>
-
-                <article class="article-item" id="item-template">
-                    <div class="image-wrap">
-                        <img src="https://definicion.de/wp-content/uploads/2009/12/paisaje-1.jpg" alt="paisaje">
+            <div class="formulario">
+                <h1 class="sub-header">Formulario</h1>
+                <form action="">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <br>
+                        <input type="text" name="nombre" id="">
                     </div>
-                    <div class="contenido">
-                        <h2 >Árticulo de prueba</h2>
-
-                        <span class="date">Hace 5 minutos</span>
-                        <a href="#">Leer más</a>
+                    <div class="form-group">
+                        
+                        <label for="apellido">Apellido</label>
+                        <br>
+                        <input type="text" name="apellido" id="">
                     </div>
-                </article>
-                <!-- Añadir articulos via JS -->
+                    <div class="form-group">
+                        <label for="bio">Biografiía</label><br>
+                        <textarea name="bio" id=""></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="genero" value="hombre">Hombre 
+                        <input type="radio" name="genero" value="mujer">Mujer 
+                        <input type="radio" name="genero" value="otro">Otro 
 
-         
-            </section>
+                    </div>
 
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+            </div>
             <aside class="aside">
                 <div id="nav-blog" class="sidebar-item">
                     <h3>Puedes hacer esto</h3>

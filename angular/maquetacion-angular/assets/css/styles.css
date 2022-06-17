@@ -122,25 +122,41 @@
   }
 }
 
-@-webkit-keyframes rotate-logo {
-  from {
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
+@-webkit-keyframes latir {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
-  to {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
+  50% {
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02);
+  }
+  55% {
+    -webkit-transform: scale(0.95, 0.95);
+            transform: scale(0.95, 0.95);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
 }
 
-@keyframes rotate-logo {
-  from {
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
+@keyframes latir {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
-  to {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
+  50% {
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02);
+  }
+  55% {
+    -webkit-transform: scale(0.95, 0.95);
+            transform: scale(0.95, 0.95);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
 }
 
@@ -149,8 +165,7 @@
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  background: #8cd0e3;
-  background: radial-gradient(circle, #8cd0e3 0%, #62dafb 100%);
+  background: radial-gradient(circle, #f13e3e 1%, #fc4f46 100%);
   width: 100%;
   height: 150px;
   -webkit-box-align: center;
@@ -260,7 +275,7 @@ body .container .header {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #ccc;
-  border-top: 5px solid #62dafb;
+  border-top: 5px solid #f13e3e;
 }
 
 body .container .header .logo {
@@ -279,8 +294,8 @@ body .container .header .logo img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: rotate-logo 30s linear infinite;
-          animation: rotate-logo 30s linear infinite;
+  -webkit-animation: latir 2s linear infinite;
+          animation: latir 2s linear infinite;
 }
 
 body .container .header .logo .brand {
@@ -321,7 +336,7 @@ body .container .header nav li a {
 }
 
 body .container .header nav li a:hover {
-  color: #62dafb;
+  color: #f13e3e;
 }
 
 body .container #slider.slider-big {
@@ -329,8 +344,8 @@ body .container #slider.slider-big {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  background: #8cd0e3;
-  background: radial-gradient(circle, #8cd0e3 0%, #62dafb 100%);
+  background: #f13e3e;
+  background: radial-gradient(circle, #f13e3e 1%, #fc4f46 100%);
   width: 100%;
   height: 350px;
   -webkit-box-align: center;
