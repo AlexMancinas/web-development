@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetacion base</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <img src="assets/img/react.svg" alt="Logo de react">
+                <span class="brand">
+                    <strong>Curso</strong> React
+                </span>
+            </div>
+
+            <!-- MENU -->
+            <nav class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+                <li><a href="#">Pagina 1</a></li>
+                <li><a href="#">Pagina 2</a></li>
+            </nav>
+
+        </header>
+        <!-- Slider -->
+        <div id="slider" class="slider-big">
+            <h1>Bienvenidos al curso de React</h1>
+            <a href="blog.html" class="btn-white">Ir al blog</a>
+        </div>
+        <main class="main">
+
+            <!-- Templates -->
+            <section id="articles" class="content">
+                <h2 class="sub-header">Últimos artículos</h2>
+
+                <article class="article-item" id="item-template">
+                    <div class="image-wrap">
+                        <img src="https://definicion.de/wp-content/uploads/2009/12/paisaje-1.jpg" alt="paisaje">
+                    </div>
+                    <div class="contenido">
+                        <h2 >Árticulo de prueba</h2>
+
+                        <span class="date">Hace 5 minutos</span>
+                        <a href="#">Leer más</a>
+                    </div>
+                </article>
+                <!-- Añadir articulos via JS -->
+
+         
+            </section>
+
+            <aside class="aside">
+                <div id="nav-blog" class="sidebar-item">
+                    <h3>Puedes hacer esto</h3>
+                    <a href="#">Crear articulo</a>
+                </div>
+                <div id="search" class="sidebar-item">
+                    <h3>Buscador</h3>
+                    <p>Encuentra el articulo que buscas</p>
+                    <form>
+                        <input type="text" name="search" id="">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>&copy; Master en frameworks para JavaScript</p>
+        </footer>
+    </div>
+    <script src="js/articulos.js"></script>
+</body>
+
+</html>
