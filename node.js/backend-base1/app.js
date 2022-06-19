@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // Cargar ficheros rutas
-
+var article_routes = require('./routes/article');
 
 //Middlewares
 app.use(bodyParser.urlencoded({extended: false}));
@@ -16,19 +16,20 @@ app.use(bodyParser.json());
 //CORS
 
 
-// Añadir prefijos a rutas
+// Añadir prefijos a rutas / cargar rutas
+app.use(article_routes);
 
 
 //Ruta o metodo de prueba para el api
-app.get('/probando', (req, res)=>{
+// app.get('/probando', (req, res)=>{
      
 
-    return res.status(200).send({
-        curso: 'Master en Frameworks JS',
-        autor: 'Alex Mancinas',
-        url: 'alexmancinasweb.com'
-    });
-});
+//     return res.status(200).send({
+//         curso: 'Master en Frameworks JS',
+//         autor: 'Alex Mancinas',
+//         url: 'alexmancinasweb.com'
+//     });
+// });
 
 // Exportar modulo (ficheto actual)
 module.exports = app;
