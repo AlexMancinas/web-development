@@ -1,9 +1,12 @@
 'use stric'
 
+
 var validator = require('validator');
 var Article = require('../models/article')
 var fs = require('fs');
-var path = require('path')
+var path = require('path');
+const { exists } = require('../models/article');
+const { constants } = require('buffer');
 
 var controller = {
 
@@ -265,23 +268,92 @@ var controller = {
         //Comprobar la extension ,solo imagenes , sino es valida borrar el fichero
         if (file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif') {
             //Borrar el archivo subido
-
+            fs.unlink(file_path, (err) => {
+                return res.status(200).send({
+                    status: 'error',
+                    message: 'la extension de la imagen no es valida'
+                });
+            })
 
         } else {
-            //Si todo es valido
+            //Si todo es valido, sacando id de la url
+            var articleId = req.params.id;
+            //Buscar el articulo, asignarle el nombre a la imagen y atualizarlo
+            Article.findByIdAndUpdate({ _id: articleId }, { image: file_name }, { new: true }, (err, articleUpdated) => {
+                if (err || !articleUpdated) {
+                    return res.status(200).send({
+                        status: 'error',
+                        message: 'Error al guardar la imagen de articulo'
+                    });
+                }
+
+                return res.status(200).send({
+                    status: 'success',
+                    article: articleUpdated
+                });
+            });
+
 
 
             //Buscar el articulo, asignarle el nombre de la imagen y actualizarlo
         }
 
 
-        return res.status(404).send({
-            fichero: req.files,
-            split: file_split,
-            file_ext
+
+    }, //End upload file
+
+    getImage: (req, res) => {
+        var file = req.params.image;
+        var path_file = './upload/articles/' + file;
+
+        fs.stat(path_file,(err, stats)=>{
+           
+            if(stats){
+               
+                return res.sendFile(path.resolve(path_file));
+            }else{
+                return res.status(404).send({
+                    status:'error',
+                    article:'la imagen no existe'
+                })
+            }
+ 
+        })
+    },
+
+    search: (req, res)=>{
+        //Sacar el string a buscar
+        var searchString = req.params.search;
+
+        //Find or 
+        Article.find({ "$or":[
+            { "title": {"$regex": searchString, "$options": "i"}},
+            { "content": {"$regex": searchString, "$options": "i"}}
+        ]}).sort([['date', 'descending']]).exec((err, articles) =>{
+            if(err){
+                return res.status(500).send({
+                    status:'error',
+                    message: 'Error en la peticion'
+                })
+            }
+            if(!articles || articles.length <= 0){
+                return res.status(404).send({
+                    status:'error',
+                    message: 'No hay articulos que coincidan con tu busqueda'
+                })
+            }
+
+            return res.status(200).send({
+                status:'success',
+                articles
+            })
         });
+
+        
     }
+
 }
+
 
 //End controller
 
