@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  font-size: 16px;
+}
+
+body .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+/*# sourceMappingURL=style.css.map */
