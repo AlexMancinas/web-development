@@ -1,1 +1,12 @@
-<p>pagina works!</p>
+<h1 class="subheader">Página de pruebas</h1>
+
+<div *ngIf="nombre && apellido">
+    <h2>El nombre es: {{nombre}}</h2>
+    <h2>El apellido es: {{apellido}}</h2>
+</div>
+
+<div *ngIf="!nombre || !apellido">
+    <h2>No hay parametros por la url</h2>
+</div>
+
+<button (click)="redirection()">Muestra parametros</button>
