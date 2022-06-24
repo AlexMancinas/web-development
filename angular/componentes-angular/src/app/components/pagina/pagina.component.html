@@ -1,12 +1,30 @@
 <h1 class="subheader">Página de pruebas</h1>
 
-<div *ngIf="nombre && apellido">
+<!-- <div *ngIf="nombre && apellido">
     <h2>El nombre es: {{nombre}}</h2>
     <h2>El apellido es: {{apellido}}</h2>
 </div>
 
 <div *ngIf="!nombre || !apellido">
     <h2>No hay parametros por la url</h2>
+</div> -->
+
+
+<!-- <div *ngIf="nombre && apellido; else noHayParametros">
+    <h2>El nombre es: {{nombre}}</h2>
+    <h2>El apellido es: {{apellido}}</h2>
 </div>
 
+<ng-template #noHayParametros>
+    <h2>No hay parametros por la url</h2>
+</ng-template> -->
+<div *ngIf="nombre && apellido; then siHayParametros else noHayParametros"></div>
+<ng-template #siHayParametros>
+    <h2>El nombre es: {{nombre}}</h2>
+    <h2>El apellido es: {{apellido}}</h2>
+</ng-template>
+
+<ng-template #noHayParametros>
+    <h2>No hay parametros por la url</h2>
+</ng-template>
 <button (click)="redirection()">Muestra parametros</button>
