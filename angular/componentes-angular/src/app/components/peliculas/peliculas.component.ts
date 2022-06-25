@@ -1,27 +1,33 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Pelicula } from 'src/app/models/peliculas';
+import { PeliculaService } from 'src/app/services/peliculas.service';
 
 @Component({
   selector: 'peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers: [PeliculaService]
 })
 export class PeliculasComponent implements OnInit {
   title: string;
-  public peliculas: Array<any  >;
+  public peliculas: Array<Pelicula>;
+  public favorita!: Pelicula;
+  public fecha: any;
 
-  constructor() { 
+
+  constructor(
+  private _peliculaService: PeliculaService,
+
+  ) { 
     this.title = "Componente peliculas"
-    this.peliculas =[
-      {year: 2019 ,title: 'Spiderman 4', image: 'https://cdn.pocket-lint.com/r/s/970x/assets/images/159643-tv-news-spider-man-no-way-home-image1-dryautoefj-jpg.webp'},
-      {year: 2019 ,title: 'Avengers: end game', image: 'https://ichef.bbci.co.uk/news/800/cpsprodpb/BF0D/production/_106090984_2e39b218-c369-452e-b5be-d2476f9d8728.jpg.webp'},
-      {year: 2015 ,title: 'Batman VS Superman', image: 'https://www.elviejotopo.com/wp-content/uploads/2016/03/batman-v-superman-dawn-of-justice_bb788b6f.jpg'}
-    ]
-
+    this.peliculas = this._peliculaService.getPeliculas();
+    this.fecha = new Date(2022, 5, 24)
 
   }
 
   ngOnInit(): void {
     console.log('Componente inicado')
+    console.log(this._peliculaService.holaMundo())
   }
 
   ngDoCheck(){
@@ -33,5 +39,9 @@ export class PeliculasComponent implements OnInit {
 
   ngOnDestroy(){
     console.log('El componente se va a eliminar');
+  }
+
+  mostrarFavorita(event: any){
+    this.favorita = event.pelicula;
   }
 }
