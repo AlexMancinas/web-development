@@ -271,8 +271,10 @@ body {
     font-size: 17px;
 }
 
+input[type="file"],
 input[type="text"],
 textarea{
+
     width: 100%;
     min-height: 30px;
     border: 1px solid #ccc;
@@ -280,6 +282,7 @@ textarea{
     margin-bottom: 5px;
     transition: 300ms all;
     border-radius: 10px;
+    
 }
 
 input[type="text"]:focus,
