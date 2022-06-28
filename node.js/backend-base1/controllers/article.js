@@ -128,38 +128,37 @@ var controller = {
     },
 
     getArticle: (req, res) => {
-        //Recoger el id de la url
+
+        // Recoger el id de la url
         var articleId = req.params.id;
 
-
-        //Comprobar que existe
+        // Comprobar que existe
         if (!articleId || articleId == null) {
             return res.status(404).send({
                 status: 'error',
-                message: 'No existe el articulo'
+                message: 'No existe el articulo !!!'
             });
         }
 
-        //Buscar el articulo 
+        // Buscar el articulo
         Article.findById(articleId, (err, article) => {
 
             if (err || !article) {
                 return res.status(404).send({
                     status: 'error',
-                    message: 'No xiste el articulo'
+                    message: 'No existe el articulo !!!'
                 });
             }
-            //devolverlo en json
-            return res.status(404).send({
+
+            // Devolverlo en json
+            return res.status(200).send({
                 status: 'success',
                 article
             });
 
         });
-
-
-
     },
+
 
     update: (req, res) => {
         //Recoger el id del articulo por la url
@@ -278,20 +277,28 @@ var controller = {
         } else {
             //Si todo es valido, sacando id de la url
             var articleId = req.params.id;
-            //Buscar el articulo, asignarle el nombre a la imagen y atualizarlo
-            Article.findByIdAndUpdate({ _id: articleId }, { image: file_name }, { new: true }, (err, articleUpdated) => {
-                if (err || !articleUpdated) {
-                    return res.status(200).send({
-                        status: 'error',
-                        message: 'Error al guardar la imagen de articulo'
-                    });
-                }
+            if (articleId) {
+                //Buscar el articulo, asignarle el nombre a la imagen y atualizarlo
+                Article.findByIdAndUpdate({ _id: articleId }, { image: file_name }, { new: true }, (err, articleUpdated) => {
+                    if (err || !articleUpdated) {
+                        return res.status(200).send({
+                            status: 'error',
+                            message: 'Error al guardar la imagen de articulo'
+                        });
+                    }
 
+                    return res.status(200).send({
+                        status: 'success',
+                        article: articleUpdated
+                    });
+                });
+            }else{
                 return res.status(200).send({
                     status: 'success',
-                    article: articleUpdated
+                    image: file_name
                 });
-            });
+            }
+
 
 
 
@@ -306,50 +313,52 @@ var controller = {
         var file = req.params.image;
         var path_file = './upload/articles/' + file;
 
-        fs.stat(path_file,(err, stats)=>{
-           
-            if(stats){
-               
+        fs.stat(path_file, (err, stats) => {
+
+            if (stats) {
+
                 return res.sendFile(path.resolve(path_file));
-            }else{
+            } else {
                 return res.status(404).send({
-                    status:'error',
-                    article:'la imagen no existe'
+                    status: 'error',
+                    article: 'la imagen no existe'
                 })
             }
- 
+
         })
     },
 
-    search: (req, res)=>{
+    search: (req, res) => {
         //Sacar el string a buscar
         var searchString = req.params.search;
 
         //Find or 
-        Article.find({ "$or":[
-            { "title": {"$regex": searchString, "$options": "i"}},
-            { "content": {"$regex": searchString, "$options": "i"}}
-        ]}).sort([['date', 'descending']]).exec((err, articles) =>{
-            if(err){
+        Article.find({
+            "$or": [
+                { "title": { "$regex": searchString, "$options": "i" } },
+                { "content": { "$regex": searchString, "$options": "i" } }
+            ]
+        }).sort([['date', 'descending']]).exec((err, articles) => {
+            if (err) {
                 return res.status(500).send({
-                    status:'error',
+                    status: 'error',
                     message: 'Error en la peticion'
                 })
             }
-            if(!articles || articles.length <= 0){
+            if (!articles || articles.length <= 0) {
                 return res.status(404).send({
-                    status:'error',
+                    status: 'error',
                     message: 'No hay articulos que coincidan con tu busqueda'
                 })
             }
 
             return res.status(200).send({
-                status:'success',
+                status: 'success',
                 articles
             })
         });
 
-        
+
     }
 
 }

@@ -24,4 +24,4 @@ router.get('/get-image/:image', articleController.getImage);
 router.get('/search/:search', articleController.search);
 
 module.exports = router;
-
+ 

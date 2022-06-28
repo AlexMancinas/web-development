@@ -273,7 +273,8 @@ body {
 
 input[type="file"],
 input[type="text"],
-textarea{
+textarea
+{
 
     width: 100%;
     min-height: 30px;
@@ -283,6 +284,12 @@ textarea{
     transition: 300ms all;
     border-radius: 10px;
     
+}
+
+.btn .up_btn .afu-attach-pin{
+    display: block !important;
+    width: 100% !important;
+    max-width: 90% !important;
 }
 
 input[type="text"]:focus,
