@@ -235,7 +235,28 @@ body {
 .btn-success:hover{
     background:black;
 }
+.btn-warning {
+    color:  white !important;
+    background-color: rgb(241, 179, 64);
+    border-radius: 10px;
+    text-align: center;
+}
 
+.btn-danger:hover,.btn-warning:hover{
+    transition: all 300ms;
+    opacity: 0.8;
+}
+
+.btn-danger{
+    color:  white !important;
+    background-color: rgb(207, 58, 58);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.buttons{
+    margin-top: 30px;
+}
 .mid-form{
     width: 50%;
     margin: 0px auto;

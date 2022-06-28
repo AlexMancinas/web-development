@@ -5,7 +5,9 @@ import { Article } from "../models/article";
 import { Global } from "./global";
 @Injectable()
 export class ArticleService{
+    
     public url: string
+
     constructor(
 
         private _http: HttpClient,
@@ -18,7 +20,21 @@ export class ArticleService{
         return "Soy el servicio de mis articulos"
     }
 
-    getArticles(): Observable<any>{
-        return this._http.get(this.url+'articles')
+    getArticles(last:any = null): Observable<any>{
+        var articles = 'articles'
+        if(last != null){
+            articles = 'articles/true';
+        }
+
+        return this._http.get(this.url+ articles);
+    }
+                
+    getArticle(articleId: string):Observable<any>{
+        
+        return this._http.get(this.url+'article/'+articleId);
+    }
+
+    search(searchString: string):Observable<any>{
+        return this._http.get(this.url + 'search/'+searchString);
     }
 }
