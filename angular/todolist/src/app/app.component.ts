@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Injectable } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todolist';
+  
+  public tareas!: Array<string>
+  tarea!: string 
+  constructor(){
+    
+  }
+
 }
