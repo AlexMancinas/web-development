@@ -1,12 +1,12 @@
-<h1>Lista de tareas </h1>
-<hr>
-<label for="entrada">Pon tu tarea</label>
-<input type="text" name="entrada" id="tarea" [(ngModel)]="tarea">
-<button type="submit">Guardar</button>
-<br>
-<br>
-<div>
-  <h2>tareas por hacer</h2>
+<h1>To-Do List</h1>
+<label for="tarea">Nombre de la tarea: </label>
+<input type="text" placeholder="Ingresa tu tarea" [(ngModel)]="nombreTarea" id="tarea">
+<button [disabled]="!nombreTarea" (click)="guardarTarea()">Guardar</button>
 
-  <app-tarea></app-tarea>
-</div>
+<ul>
+    <li *ngFor="let tarea of tareas;let indice = index;" [class.tachado] ="tarea.terminada">
+        <input [(ngModel)]="tarea.terminada" (change)="cambiarEstadoDeTarea()" type="checkbox">
+        {{tarea.nombre}}
+        <button  (click)="eliminarTarea(indice)" class="enlace-eliminar" >&times;</button>
+    </li>
+</ul>

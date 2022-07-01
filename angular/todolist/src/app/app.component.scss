@@ -10,8 +10,17 @@
     margin: 0px;
     padding: 0px;
   }
-input[type="text"],
-label{
-    margin-right: 10px;
-    margin-top: 10px;
-}
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+  
+  a.enlace-eliminar {
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .tachado {
+    text-decoration: line-through;
+  }
